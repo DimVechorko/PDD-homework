@@ -1,0 +1,66 @@
+ul li p {
+margin:15px 0 15px 0;
+padding:0 0 0 40px;
+font:normal 16px Arial, Helvetica, sans-serif;
+color:#999;
+}
+
+.paginator {
+position:relative;
+max-width:600px;
+margin:0 auto 30px auto;
+}
+
+.paginator .pItem {
+display:inline-block;
+width:30px;
+margin-right:5px;
+padding:7px 0;
+background:#F5F6F6;
+font:bold 13px Arial, Helvetica, sans-serif;
+text-decoration:none;
+text-align:center;
+color:#999
+}
+
+.paginator .pItem:hover {
+background:#79BBDD;
+color:#FFF;
+}
+
+.paginator .active {
+background:#46a4da;
+color:#FFF;
+}
+
+.paginator span {
+font:bold 13px Arial, Helvetica, sans-serif;
+color:#999;
+display:block;
+position:absolute;
+right:0;
+top:0;
+}
+
+.paginator span a {
+display:inline-block;
+width:28px;
+padding:6px 0;
+margin-left:5px;
+font:bold 13px Arial, Helvetica, sans-serif;
+text-decoration:none;
+text-align:center;
+color:#999;
+background:#FFF;
+border:1px solid #F5F6F6;
+}
+
+.paginator span a:hover {
+background:#F5F6F6;
+border:1px solid #E1E1E1;
+}
+
+.paginator span a.activeNum {
+background:#F5F6F6;
+border:1px solid #E1E1E1;
+}
