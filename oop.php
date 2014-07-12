@@ -6,13 +6,13 @@ require("inc/validateForm.php");
 require("inc/crtForm.php");
 require("inc/dataClass.php");
 require("inc/paginator.php");
+require("inc/pdoclass.php");
 include_once("tpl/head.php");
 $page=$html;
 
 include_once("tpl/formprocess.php");
 $page.=$form;
 echo $page;
-
 $message=dataOperations::getPageData();
 echo $message;
 

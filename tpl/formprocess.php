@@ -5,9 +5,9 @@ $message = "";
 
 if (isset($_POST["submit"]))
 {
-    $rules = array(); // stores the validation rules
+    $rules = array();
 
-    // standard form fields
+
     $rules[] = "required,user_name,Пожалуйста, введите Ваше имя.";
     $rules[] = "required,email,Пожалуйста введите ваш email.";
     $rules[] = "valid_email,email,Введен некорректный email.";
@@ -16,7 +16,7 @@ if (isset($_POST["submit"]))
 
     $errors = $validation->validateFields($_POST, $rules);
 
-    // if there were errors, re-populate the form fields
+
     if (!empty($errors))
     {
         echo "<div class='error'>Please fix the following errors:\n<ul>";
@@ -26,17 +26,18 @@ if (isset($_POST["submit"]))
         echo "</ul></div>";
     }
 
-    // no errors! redirect the user to the thankyou page (or whatever)
+
     else
     {
         $data=new dataOperations();
-        var_dump($data->formData);
-        $data::saveData($data->formData);
-        $message = "All fields have been validated successfully!";
-        //header('Location: '.$_SERVER['REQUEST_URI']);
-        // here you would either email the form contents to someone or store it in a database.
-        // To redirect to a "thankyou" page, you'd just do this:
-        // header("Location: thanks.php");
+        $tmp=$data->formData;
+        $data::saveData($tmp);
+        var_dump($tmp);
+        $dbase=new dbDataProcessing();
+        $dbase->saveData($tmp);
+       header('Location: '.$_SERVER['REQUEST_URI']);
+
+
     }
     $_SESSION['user_name']=$_POST['user_name'];
     $_SESSION['email']=$_POST['email'];
